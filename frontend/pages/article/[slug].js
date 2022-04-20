@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 
 import Seo from "../../components/seo";
 import Layout from "../../components/layout";
+// import Image from 'next/image'
 
 import { fetchAPI } from "../../lib/api";
 import { getStrapiMedia } from "../../lib/media";
@@ -31,7 +32,9 @@ const Article = ({ article, categories }) => {
       </div>
       <div className="uk-section">
         <div className="uk-container uk-container-small">
-          <ReactMarkdown children={article.attributes.content} />
+          <ReactMarkdown>
+            article.attributes.content
+          </ReactMarkdown>
           <hr className="uk-divider-small" />
           <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
             <div>
