@@ -32,7 +32,7 @@ export async function getStaticPaths() {
         slug: category.attributes.slug,
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
