@@ -97,7 +97,7 @@ export async function getStaticProps({ params }) {
     // If there is a server error, you might want to
     // throw an error instead of returning so that the cache is not updated
     // until the next successful request.
-    throw new Error(`Failed to fetch posts, received status ${res.status}`)
+    throw new Error(`Failed to fetch posts, received status ${articlesRes.status}`)
   }
 
   return {
