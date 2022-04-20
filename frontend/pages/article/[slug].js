@@ -93,7 +93,7 @@ export async function getStaticProps({ params }) {
     populate: ["image", "category", "author.picture"],
   });
   const categoriesRes = await fetchAPI("/categories");
-  if (!res.ok) {
+  if (!articlesRes.ok || !categoriesRes.ok) {
     // If there is a server error, you might want to
     // throw an error instead of returning so that the cache is not updated
     // until the next successful request.
