@@ -93,12 +93,6 @@ export async function getStaticProps({ params }) {
     populate: ["image", "category", "author.picture"],
   });
   const categoriesRes = await fetchAPI("/categories");
-  if (!articlesRes.ok || !categoriesRes.ok) {
-    // If there is a server error, you might want to
-    // throw an error instead of returning so that the cache is not updated
-    // until the next successful request.
-    throw new Error(`Failed to fetch posts, received status ${articlesRes.status}`)
-  }
 
   return {
     props: { article: articlesRes.data[0], categories: categoriesRes },
