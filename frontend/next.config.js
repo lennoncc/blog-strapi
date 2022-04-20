@@ -5,6 +5,6 @@
 
 module.exports = {
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'hailey-strapi-blog.herokuapp.com', 'res.cloudinary.com'],
   },
 }
