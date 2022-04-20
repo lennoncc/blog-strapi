@@ -32,9 +32,9 @@ const Article = ({ article, categories }) => {
       </div>
       <div className="uk-section">
         <div className="uk-container uk-container-small">
-          <ReactMarkdown>
-            {article.attributes.content}
-          </ReactMarkdown>
+        <ReactMarkdown>
+          {article.attributes.content}
+        </ReactMarkdown>
           <hr className="uk-divider-small" />
           <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
             <div>
@@ -81,7 +81,7 @@ export async function getStaticPaths() {
         slug: article.attributes.slug,
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
@@ -96,7 +96,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { article: articlesRes.data[0], categories: categoriesRes },
-    revalidate: 5,
+    revalidate: 1,
   };
 }
 
