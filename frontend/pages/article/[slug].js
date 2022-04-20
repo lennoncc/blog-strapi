@@ -85,7 +85,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const articlesRes = await fetchAPI("/articles", {
     filters: {
       slug: params.slug,
